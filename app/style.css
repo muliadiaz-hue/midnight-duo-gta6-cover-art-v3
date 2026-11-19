@@ -1,0 +1,26 @@
+html, body { margin: 0; min-height: 100%; background: #14081f; color: #f5eefb; font: 15px/1.45 system-ui, -apple-system, sans-serif; }
+.app { display: flex; gap: 28px; align-items: flex-start; justify-content: center; min-height: 100vh; padding: 26px; box-sizing: border-box; }
+.controls { display: flex; flex-direction: column; gap: 13px; width: 300px; flex: none; }
+.controls h1 { margin: 0; font-family: "Passion One", "Arial Black", sans-serif; font-size: 42px; line-height: 1; letter-spacing: 1px; background: linear-gradient(180deg, #7b2ff7, #e0218a 55%, #ff9a3d); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.tag { margin: -6px 0 2px; color: #c9a8e8; }
+label { display: flex; flex-direction: column; gap: 6px; font-weight: 600; }
+label.check { flex-direction: row; align-items: center; gap: 8px; font-weight: 600; }
+input[type=text], select { font: inherit; color: #f5eefb; padding: 9px 10px; border: 1px solid #4a2b66; border-radius: 8px; background: #221033; }
+input[type=file] { display: none; }
+.row { display: flex; gap: 8px; }
+button, .upload { font: inherit; font-weight: 700; padding: 10px 12px; border: 0; border-radius: 8px; background: #2c1544; color: #f5eefb; cursor: pointer; text-align: center; }
+button.primary { background: linear-gradient(90deg, #7b2ff7, #e0218a); flex: 1; }
+.upload { background: #2c1544; flex: 1; }
+button:disabled { opacity: .45; cursor: default; }
+#status { margin: 0; min-height: 1.2em; color: #ffe054; }
+.tray { display: flex; gap: 8px; }
+.tray img { width: 52px; height: 52px; object-fit: cover; border-radius: 6px; border: 2px solid transparent; cursor: pointer; }
+.tray img.active { border-color: #e0218a; }
+.hint { margin: 0; color: #9d7fb8; font-size: 13px; }
+.stage { flex: 1; display: flex; align-items: center; justify-content: center; min-width: 0; }
+canvas { width: min(100%, calc((100vh - 52px) * 1.7778)); max-height: calc(100vh - 52px); height: auto; background: #000; box-shadow: 0 14px 44px rgba(0, 0, 0, .55); }
+body.shot-cover .controls { display: none; }
+body.shot-cover .app { padding: 0; gap: 0; }
+body.shot-cover .stage { width: 100vw; height: 100vh; }
+body.shot-cover canvas { width: 100vw; height: 100vh; max-height: none; box-shadow: none; }
+@media (max-width: 900px) { .app { flex-direction: column; } .controls { width: 100%; } }

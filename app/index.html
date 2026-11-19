@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Midnight Duo — GTA 6-style cover maker</title>
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<main class="app">
+  <section class="controls" id="controls">
+    <h1>MIDNIGHT DUO</h1>
+    <p class="tag">Turn your photos into a neon-night cover.</p>
+
+    <label>Layout
+      <select id="layout">
+        <option value="band" selected>Band — hero + 2×2</option>
+        <option value="nine">Nine — 3×3 grid</option>
+        <option value="hero">Hero — one big photo</option>
+        <option value="bleed">Bleed — full photo</option>
+        <option value="tilted">Tilted — leaning panels</option>
+        <option value="diptych">Diptych — two panels</option>
+        <option value="strip">Strip — film strip</option>
+      </select>
+    </label>
+
+    <label>Grade
+      <select id="grade">
+        <option value="photo" selected>Photo — untouched</option>
+        <option value="poster">Poster — painted</option>
+        <option value="sunset">Sunset — warm</option>
+        <option value="neon">Neon — electric</option>
+        <option value="golden">Golden — honey</option>
+        <option value="dusk">Dusk — violet night</option>
+        <option value="mono">Mono — black &amp; white</option>
+      </select>
+    </label>
+
+    <label>Title <input id="caption" type="text" maxlength="24" value="MIDNIGHT DUO"></label>
+    <label>City <input id="city" type="text" maxlength="24" value="AZURA BAY"></label>
+    <label>Tagline <input id="subtitle" type="text" maxlength="40" value="TWO LEADS · ONE SCORE"></label>
+
+    <label>Export size
+      <select id="size">
+        <option value="wide" selected>Wide 1920 × 1080</option>
+        <option value="square">Square 1080 × 1080</option>
+        <option value="portrait">Portrait 1080 × 1350</option>
+        <option value="story">Story 1080 × 1920</option>
+      </select>
+    </label>
+
+    <label class="check"><input id="captions" type="checkbox"> Panel captions</label>
+
+    <div class="row">
+      <button id="undo" type="button">Undo</button>
+      <button id="redo" type="button">Redo</button>
+      <button id="resetView" type="button">Reset view</button>
+    </div>
+    <div class="row">
+      <button id="export" type="button" class="primary">Export PNG</button>
+      <label class="upload">Add photo <input id="photo" type="file" accept="image/*"></label>
+    </div>
+    <p id="status" role="status"></p>
+
+    <div class="tray" id="tray" aria-label="Sample photos"></div>
+    <p class="hint">Drag a panel to pan it, scroll over it to zoom. Everything stays on your machine.</p>
+  </section>
+  <section class="stage">
+    <canvas id="cover" width="1920" height="1080" aria-label="The cover"></canvas>
+  </section>
+</main>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>
